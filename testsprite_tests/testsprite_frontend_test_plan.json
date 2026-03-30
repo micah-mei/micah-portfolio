@@ -1,0 +1,549 @@
+[
+  {
+    "id": "TC001",
+    "title": "Hero sequence loads and shows overlays",
+    "description": "Verifies the home page hero transitions from loading to the interactive hero content with name and subtitle overlays visible.",
+    "category": "Scroll-driven hero sequence",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero frames to preload"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero canvas content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the name and subtitle overlays are displayed during the hero"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Hero sequence advances on scroll and hands off to next section",
+    "description": "Verifies scrolling advances through the hero track and the page continues to the next section after the hero ends.",
+    "category": "Scroll-driven hero sequence",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero frames to preload"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically through the hero track to advance frames"
+      },
+      {
+        "type": "action",
+        "description": "Scroll past the hero end to continue down the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user reaches the content section after the hero"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Hero shows load error UI when frames fail and page remains usable",
+    "description": "Verifies that if the hero preload fails, an error state is shown and the user can still scroll to the rest of the page.",
+    "category": "Scroll-driven hero sequence",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero frames to preload"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero load process to either complete or show an error state"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a hero load error UI message is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll past the hero area to continue to page content"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user reaches the content section after the hero"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Hero remains functional after brief pause mid-scroll",
+    "description": "Verifies the hero remains interactive when the user pauses during the scroll-driven sequence and then continues scrolling.",
+    "category": "Scroll-driven hero sequence",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero frames to preload"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically partway through the hero track"
+      },
+      {
+        "type": "action",
+        "description": "Wait for a short moment"
+      },
+      {
+        "type": "action",
+        "description": "Scroll further through the hero track"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero canvas content is still displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the name and subtitle overlays are still displayed during the hero"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "About section reveals via terminal typing animation on enter",
+    "description": "Verifies that scrolling the about section into view shows the terminal prompt and reveals about copy.",
+    "category": "About terminal section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll until the about section enters view"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an animated terminal prompt appears in the about section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about copy is displayed in the terminal-styled block"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "About section content is readable after animation completes",
+    "description": "Verifies the about content remains visible and readable after the typing-style reveal finishes.",
+    "category": "About terminal section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll until the about section enters view"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the typing-style reveal to complete"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the full about copy is displayed in the terminal-styled block"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Experience timeline renders and is readable",
+    "description": "Verifies the experience section shows a timeline/list with role titles, organizations, dates, and highlights visible.",
+    "category": "Experience timeline",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify experience entries are displayed in a timeline or list format"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify role titles, organization names, dates, and highlights are visible for experience entries"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Experience timeline remains readable while scrolling through entries",
+    "description": "Verifies the experience section remains usable as the user scrolls through the timeline content.",
+    "category": "Experience timeline",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the experience section"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the experience timeline content"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify additional experience entry content becomes visible as the user scrolls"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify role titles and highlights remain visible and readable"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Projects grid renders on the portfolio page",
+    "description": "Verifies the projects section loads and displays a grid of project cards.",
+    "category": "Projects grid with hover motion",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a grid of project cards is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Project card hover reveals expanded content",
+    "description": "Verifies hovering a project card shows additional details via the hover affordance.",
+    "category": "Projects grid with hover motion",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "action",
+        "description": "Hover over a project card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expanded project details are displayed for the hovered card"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Project cards remain readable without hover interaction",
+    "description": "Verifies project card title and summary content are readable without relying on hover effects.",
+    "category": "Projects grid with hover motion",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each visible project card shows readable title and summary content"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Hovering multiple project cards works consistently",
+    "description": "Verifies hover affordances can be triggered on more than one card without breaking the grid interaction.",
+    "category": "Projects grid with hover motion",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "action",
+        "description": "Hover over the first project card"
+      },
+      {
+        "type": "action",
+        "description": "Hover over a different project card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expanded project details are displayed for the most recently hovered card"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Projects section remains usable after scrolling away and back",
+    "description": "Verifies the projects grid still renders and can be interacted with after additional scrolling.",
+    "category": "Projects grid with hover motion",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to a different section of the page"
+      },
+      {
+        "type": "action",
+        "description": "Scroll back to the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a grid of project cards is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Contact form submits successfully with valid inputs",
+    "description": "Verifies a valid contact submission results in a visible success status message.",
+    "category": "Contact form (Resend)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact footer"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Test User"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the reply-to email field with test.user@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the message field with Hello, this is an automated test message."
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success status message is visible below the form"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Contact form shows validation error when required fields are missing",
+    "description": "Verifies missing required fields prevent successful submission and show an error status message.",
+    "category": "Contact form (Resend)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact footer"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Test User"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the reply-to email field with test.user@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error message is visible below the form"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Contact form shows validation error for an invalid email format",
+    "description": "Verifies the form rejects an invalid reply-to email and shows an error message.",
+    "category": "Contact form (Resend)",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact footer"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Test User"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the reply-to email field with invalid-email-format"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the message field with Testing invalid email validation."
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error message is visible below the form"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Contact form allows resubmission after a validation error",
+    "description": "Verifies the user can correct inputs after an error and submit again successfully.",
+    "category": "Contact form (Resend)",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact footer"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the reply-to email field with invalid-email-format"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the reply-to email field with test.user@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Test User"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the message field with Corrected details after validation error."
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success status message is visible below the form"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Custom terminal cursor follows pointer on desktop",
+    "description": "Verifies the decorative terminal cursor appears and moves with pointer motion on fine-pointer devices.",
+    "category": "Custom terminal cursor",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Move the mouse across the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a custom cursor indicator follows the pointer"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Page remains usable with normal cursor behavior",
+    "description": "Verifies the page remains navigable and interactive without relying on the custom cursor.",
+    "category": "Custom terminal cursor",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page content remains visible and interactive during scrolling"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3042",
+  "executionArgs": {
+    "projectName": "Micah's Portfolio",
+    "projectPath": "/Users/micah/Micah's Portfolio",
+    "testIds": [],
+    "additionalInstruction": "",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-31ShPz3GEiOKf8FZSaHjmDfnkR6Q7Xzarg_48lP9ITGyiFvzg1cLQdcVIu5dFzwVG_AXa_FOighLo6TX_226oMNIDRm8vlIpUa8DrS5i62wTT7AMQsX8beyejT-CvZxYIAc"
+    }
+  },
+  "serverPort": 52526,
+  "proxy": "http://f01a6b2d-aef8-431e-bd48-1fdcfd9f6c8a:vcbfqYo8uIc0zRiKmWCxD7sFppmIzQvb@tun.testsprite.com:8080"
+}

@@ -1,0 +1,41 @@
+html {
+  background-color: #000000;
+  color-scheme: dark;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #e0e0e0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-pitch: #000000;
+  --color-charcoal: #0a0a0a;
+  --color-cyan: #00f0ff;
+  --color-silver: #e0e0e0;
+}
+
+/* No global scroll-behavior: smooth — it breaks wheel-driven canvas scrubbing */
+
+body {
+  @apply bg-pitch text-silver antialiased;
+}
+
+::selection {
+  background: rgba(0, 240, 255, 0.25);
+  color: #fff;
+}
+
+/* Custom cursor draws on top; system cursor stays visible for accessibility / failures */

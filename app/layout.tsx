@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { CursorMount } from "@/components/CursorMount";
@@ -16,21 +16,20 @@ export const metadata: Metadata = {
     "Computer Science & Ivey Business — Western University.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${GeistMono.variable}`}
-      style={{ backgroundColor: "#000000" }}
-    >
-      <body
-        className="font-sans min-h-screen antialiased"
-        style={{ backgroundColor: "#000000", color: "#e0e0e0" }}
-      >
+    <html lang="en" className={`${inter.variable} ${GeistMono.variable}`}>
+      <body className={inter.className}>
         <CursorMount />
         {children}
       </body>

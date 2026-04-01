@@ -8,10 +8,10 @@ import { SiteNav } from "@/components/SiteNav";
 
 export default function Home() {
   return (
-    <main className="relative isolate min-h-screen bg-pitch">
+    <main className="relative isolate min-h-screen w-full max-w-[100vw] overflow-x-clip bg-pitch">
       <SiteNav />
       <HeroScroll />
-      <div className="relative z-10">
+      <div className="relative z-10 min-w-0 bg-pitch">
         <AboutReadme />
         <ExperiencePath />
         <ProjectsGrid />

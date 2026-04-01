@@ -2,9 +2,16 @@
   "name": "micah-portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
-    "dev": "next dev -p 3042",
+    "dev": "node scripts/dev.mjs",
+    "dev:3000": "next dev -p 3000",
+    "dev:3042": "next dev -p 3042",
+    "dev:clean": "rm -rf .next && node scripts/dev.mjs",
     "build": "next build",
+    "build:fresh": "rm -rf .next && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,12 +23,14 @@
     "next": "14.2.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "resend": "^6.9.4"
+    "resend": "^6.9.4",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/node": "^20.17.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.18",
     "postcss": "^8.4.49",

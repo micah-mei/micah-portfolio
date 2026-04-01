@@ -1,21 +1,3 @@
-html {
-  background-color: #000000;
-  color-scheme: dark;
-  overflow-x: clip;
-}
-
-body {
-  margin: 0;
-  background-color: #000000;
-  color: #e0e0e0;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,10 +9,18 @@ body {
   --color-silver: #e0e0e0;
 }
 
-/* No global scroll-behavior: smooth — it breaks wheel-driven canvas scrubbing */
+@layer base {
+  html {
+    @apply bg-pitch;
+    color-scheme: dark;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 
-body {
-  @apply bg-pitch text-silver antialiased;
+  body {
+    @apply m-0 min-h-screen bg-pitch text-silver antialiased;
+  }
 }
 
 ::selection {
@@ -38,4 +28,4 @@ body {
   color: #fff;
 }
 
-/* Custom cursor draws on top; system cursor stays visible for accessibility / failures */
+/* No global scroll-behavior: smooth — it breaks wheel-driven canvas scrubbing */

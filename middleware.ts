@@ -7,7 +7,18 @@ import { FRAME_COUNT } from "@/lib/constants";
  * /sequence1/ezgif-frame-001.jpg. Rewrites keep cached bundles working.
  */
 export function middleware(request: NextRequest) {
-  const m = request.nextUrl.pathname.match(/^\/sequence-1\/(\d+)\.jpg$/i);
+  const pathname = request.nextUrl.pathname;
+
+  if (pathname === "/") {
+    const response = NextResponse.next();
+    response.headers.set(
+      "Cache-Control",
+      "private, no-cache, no-store, must-revalidate",
+    );
+    return response;
+  }
+
+  const m = pathname.match(/^\/sequence-1\/(\d+)\.jpg$/i);
   if (!m) return NextResponse.next();
 
   const num = parseInt(m[1], 10);
@@ -19,5 +30,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/sequence-1/:path*",
+  matcher: ["/", "/sequence-1/:path*"],
 };

@@ -4,8 +4,6 @@ import { GeistMono } from "geist/font/mono";
 import { CursorMount } from "@/components/CursorMount";
 import "./globals.css";
 
-const TAB_LOGO = "/tab-logo.png?v=adobe-express-2";
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -13,14 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Micah Mei",
+  title: { absolute: "Micah Mei" },
   description:
     "Computer Science & Ivey Business — Western University.",
-  icons: {
-    icon: [{ url: TAB_LOGO, type: "image/png", sizes: "256x256" }],
-    apple: [{ url: TAB_LOGO, type: "image/png", sizes: "256x256" }],
-    shortcut: [{ url: TAB_LOGO, type: "image/png" }],
-  },
 };
 
 export const viewport: Viewport = {

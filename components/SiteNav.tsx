@@ -17,7 +17,8 @@ const LINKS = [
 const TELEPORT_MSG = "> teleporting…";
 
 const PROFILE_AVATAR_SRC =
-  "/Profile/profile-picture-deadpool-vector-art-mxlgh314ovlbiyjk.jpg";
+  "/minimalistic_profile/" +
+  encodeURIComponent("Adobe Express - file-2.png");
 
 /** Fade readout as linear scroll time approaches 1 (closer to destination). */
 function teleportReadoutOpacity(linearT: number): number {
@@ -81,14 +82,16 @@ export function SiteNav() {
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-[60] flex items-start justify-between gap-3 px-4 pt-4 md:px-8 md:pt-6">
         <div className="pointer-events-auto flex min-w-0 items-start gap-3 md:gap-4">
-          <img
-            src={PROFILE_AVATAR_SRC}
-            alt="Micah Mei"
-            width={96}
-            height={96}
-            className="h-10 w-10 shrink-0 rounded-full border border-cyan/40 object-cover shadow-[0_0_18px_rgba(0,240,255,0.18)] md:h-12 md:w-12"
-            decoding="async"
-          />
+          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-cyan/40 shadow-[0_0_18px_rgba(0,240,255,0.18)] md:h-14 md:w-14">
+            <img
+              src={PROFILE_AVATAR_SRC}
+              alt="Micah Mei"
+              width={2752}
+              height={1536}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              decoding="async"
+            />
+          </div>
           <div className="min-w-0 flex flex-col gap-0.5">
             <h1 className="shrink-0 font-mono text-xl font-medium tracking-[0.06em] text-cyan md:text-2xl">
               Micah Mei.

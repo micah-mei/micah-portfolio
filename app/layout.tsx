@@ -4,9 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { CursorMount } from "@/components/CursorMount";
 import "./globals.css";
 
-const TAB_ICON =
-  "/tab_logo/" +
-  encodeURIComponent("A_minimalist,_high-end_202604021710.png");
+const TAB_LOGO = "/tab-logo.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "Computer Science & Ivey Business — Western University.",
   icons: {
-    icon: [{ url: TAB_ICON, type: "image/png" }],
-    apple: [{ url: TAB_ICON, type: "image/png" }],
-    shortcut: [{ url: TAB_ICON, type: "image/png" }],
+    icon: [{ url: TAB_LOGO, type: "image/png", sizes: "256x256" }],
+    apple: [{ url: TAB_LOGO, type: "image/png", sizes: "256x256" }],
+    shortcut: [{ url: TAB_LOGO, type: "image/png" }],
   },
 };
 

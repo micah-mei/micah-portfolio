@@ -24,20 +24,36 @@ function IconResume({ className }: { className?: string }) {
 
 const experiences = [
   {
-    title: "Project Management Intern",
+    title: "Technical Project Management Intern",
     org: "AE&E Geomicrobial Technologies Inc.",
     location: "Beijing, China",
-    dates: "May 2025 – Aug 2025",
-    highlight:
-      "Led the strategic redesign of the corporate platform, distilling a complex 50-page sitemap into 15 streamlined user journeys to enhance navigation and user retention.",
+    dates: "May 2025 – Aug. 2025",
+    bullets: [
+      "Accelerated project alignment for a decade-old platform redesign by bridging the gap between executive vision and engineering constraints through initial user research and high-fidelity Figma prototypes.",
+      "Streamlined the development lifecycle, successfully reducing a complex 50-page sitemap into 15 strategic user journeys, by drafting structured PRDs and user flows.",
+      "Ensured the timely delivery of a responsive Next.js web application by tracking project KPIs and collaborating closely with engineering and ops teams.",
+    ],
   },
   {
-    title: "Digital Marketing Strategist",
+    title: "Product Growth Strategist",
     org: "GD Hub Smart Trading Group",
-    location: "Vancouver, Canada",
+    location: "Vancouver, BC, Canada",
     dates: "Nov. 2024 – Apr. 2025",
-    highlight:
-      "Engineered automated AI workflows using n8n, ChatGPT, and ElevenLabs, scaling outreach capacity by 3x and reducing content turnaround time by 40%.",
+    bullets: [
+      "Scaled personalized client outreach capacity by 3x and reduced content turnaround time by 40% by leading the end-to-end development of an automated AI-avatar workflow.",
+      "Secured executive buy-in for new AI features, overcoming initial stakeholder skepticism, by analyzing engagement data and building a realistic functional prototype using Synthesia.",
+      "Iterated on growth mechanisms and informed ongoing product decisions by supporting A/B testing and leveraging basic data analysis to deliver cost-efficient automation strategies.",
+    ],
+  },
+  {
+    title: "First Year Representative",
+    org: "Technology Students' Initiative (TSI)",
+    location: "London, ON, Canada",
+    dates: "Sep. 2024 – Apr. 2025",
+    bullets: [
+      "Spearheaded B2B market research to identify small-to-medium enterprises constrained by legacy web infrastructure, generating targeted lead lists for the organization.",
+      "Conducted digital needs analyses to quantify the potential sales impact and operational benefits of modernizing client web platforms with technologies like React and Node.js.",
+    ],
   },
 ];
 
@@ -81,7 +97,7 @@ export function ExperiencePath() {
         <ul className="flex flex-col gap-20 pb-4">
           {experiences.map((exp, i) => (
             <motion.li
-              key={exp.org}
+              key={`${exp.org}-${exp.dates}`}
               className="relative pl-10 md:pl-12"
               custom={i}
               initial="hidden"
@@ -112,9 +128,16 @@ export function ExperiencePath() {
               <p className="mt-1 font-mono text-[11px] text-silver/40 md:text-xs">
                 {exp.location}
               </p>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-silver/75 md:text-base">
-                {exp.highlight}
-              </p>
+              <ul className="mt-4 max-w-xl list-none space-y-3 p-0 text-sm leading-relaxed text-silver/75 md:text-base">
+                {exp.bullets.map((bullet, bi) => (
+                  <li key={bi} className="flex gap-2.5">
+                    <span className="shrink-0 font-mono text-cyan/60" aria-hidden>
+                      –
+                    </span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.li>
           ))}
         </ul>

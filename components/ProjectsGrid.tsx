@@ -74,10 +74,10 @@ const projects: Project[] = [
     cmd: "./aee-platform.open",
     name: "AE&E Corporate Platform",
     subtitle: "Corporate web platform redesign & delivery",
-    role: "Project Management Intern · Beijing",
+    role: "Technical Project Management Intern · Beijing",
     year: "2025",
     summary:
-      "Accelerated a decade-old platform redesign: user research, Figma prototypes, 50→15 strategic journeys, PRDs and stories, and cross-timezone sprint leadership through a responsive Next.js launch.",
+      "Technical PM for AE&E’s platform redesign: user research & Figma prototypes, 50→15 journeys via PRDs/user flows, KPI tracking, and tight collaboration with engineering and ops on a responsive Next.js launch.",
     link: "https://aee-t.vercel.app",
     detail: (
       <div className="space-y-4 text-sm leading-relaxed text-silver/65">
@@ -88,27 +88,51 @@ const projects: Project[] = [
               The context
             </span>
             <br />
-            AE&amp;E Geomicrobial Technologies needed alignment on a long-running
-            public platform refresh—executive vision, engineering constraints, and a
-            dated information architecture had to come together quickly.
+            AE&amp;E Geomicrobial Technologies needed faster alignment on a
+            decade-old platform redesign—closing the gap between executive vision and
+            engineering constraints while shipping a modern, responsive public site.
           </p>
-          <p>
+          <div>
             <span className="font-mono text-[10px] uppercase tracking-wider text-cyan/70">
               What I did
             </span>
-            <br />
-            Ran initial user research and built high-fidelity Figma prototypes to
-            bridge leadership and engineering. Wrote product requirements, user
-            stories, and acceptance criteria while compressing a complex 50-page
-            sitemap into 15 streamlined user journeys. Facilitated sprint planning
-            and led cross-timezone collaboration between the CEO and the development
-            team to ship a responsive experience.
-          </p>
+            <ul className="mt-2 list-none space-y-2.5 p-0 text-sm leading-relaxed">
+              <li className="flex gap-2">
+                <span className="shrink-0 text-cyan/55" aria-hidden>
+                  –
+                </span>
+                <span>
+                  Accelerated project alignment by bridging executive vision and
+                  engineering constraints through user research and high-fidelity
+                  Figma prototypes.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="shrink-0 text-cyan/55" aria-hidden>
+                  –
+                </span>
+                <span>
+                  Streamlined the lifecycle—50-page sitemap to 15 strategic user
+                  journeys—with structured PRDs and user flows.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="shrink-0 text-cyan/55" aria-hidden>
+                  –
+                </span>
+                <span>
+                  Delivered a responsive Next.js web application on time by tracking
+                  project KPIs and collaborating closely with engineering and ops.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="space-y-2 border-l border-cyan/25 pl-3 font-mono text-[11px] leading-relaxed text-silver/55 md:text-xs">
           <p>
             <span className="text-cyan/85">delivery (resume):</span> Responsive Next.js
-            web application; Figma; PRDs, user stories, acceptance criteria
+            web application; KPI tracking; Figma; PRDs &amp; user flows; engineering
+            &amp; ops collaboration
           </p>
           <p>
             <span className="text-cyan/85">linked build stack:</span> React (CRA +

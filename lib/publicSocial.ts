@@ -1,5 +1,5 @@
 /** Public resume PDF (served from `/public/Resume/`). */
-export const RESUME_PDF_HREF = "/Resume/Micah_Resume_2026.pdf";
+export const RESUME_PDF_HREF = "/Resume/Micah_s_Resume__PM_.pdf";
 
 /** Client-safe URLs for footer social icons (set in `.env.local`). */
 export function getPublicSocialLinks(): {

@@ -4,7 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { CursorMount } from "@/components/CursorMount";
 import "./globals.css";
 
-const TAB_LOGO = "/tab-logo.png";
+const TAB_LOGO = "/tab-logo.png?v=adobe-express-2";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Micah Mei — Portfolio",
+  title: "Micah Mei",
   description:
     "Computer Science & Ivey Business — Western University.",
   icons: {

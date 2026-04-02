@@ -47,7 +47,7 @@ const experiences = [
   },
   {
     title: "First Year Representative",
-    org: "Technology Students' Initiative (TSI — Tech for Social Impact)",
+    org: "Tech for Social Impact (TSI)",
     location: "London, ON, Canada",
     dates: "Sep. 2024 – Apr. 2025",
     bullets: [

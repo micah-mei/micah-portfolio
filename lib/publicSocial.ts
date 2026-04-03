@@ -1,5 +1,5 @@
 /** Public resume PDF (served from `/public/Resume/`). */
-export const RESUME_PDF_HREF = "/Resume/Micah_YuTao_Mei.pdf";
+export const RESUME_PDF_HREF = "/Resume/Micah_Yutao_Mei_Resume.pdf";
 
 /** Client-safe URLs for footer social icons (set in `.env.local`). */
 export function getPublicSocialLinks(): {

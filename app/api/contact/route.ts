@@ -1,6 +1,11 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
+import { DEFAULT_CONTACT_EMAIL } from "@/lib/contactInbox";
+
+/** Resend SDK expects Node APIs; avoids Edge env/runtime quirks on Vercel. */
+export const runtime = "nodejs";
+
 const EMAIL_RE =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -19,18 +24,28 @@ function safeErrorMessage(s: string, max = 280) {
   return t.length <= max ? t : `${t.slice(0, max)}…`;
 }
 
+function inboundEmail(): string {
+  return (
+    process.env.CONTACT_TO_EMAIL?.trim() ||
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ||
+    DEFAULT_CONTACT_EMAIL
+  );
+}
+
+function missingResendKey(): NextResponse {
+  const onVercel = Boolean(process.env.VERCEL);
+  const error = onVercel
+    ? "Email sending is not configured: add RESEND_API_KEY from the Resend dashboard under Project → Settings → Environment Variables, then redeploy."
+    : "Email not configured: add RESEND_API_KEY to .env.local, then restart npm run dev.";
+  return NextResponse.json({ error }, { status: 503 });
+}
+
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
-  const to = process.env.CONTACT_TO_EMAIL?.trim();
+  const to = inboundEmail();
 
-  if (!apiKey || !to) {
-    return NextResponse.json(
-      {
-        error:
-          "Email not configured: set RESEND_API_KEY and CONTACT_TO_EMAIL in .env.local, then restart npm run dev.",
-      },
-      { status: 503 },
-    );
+  if (!apiKey) {
+    return missingResendKey();
   }
 
   let name: string;

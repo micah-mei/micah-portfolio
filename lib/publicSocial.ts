@@ -1,11 +1,13 @@
+import { DEFAULT_CONTACT_EMAIL } from "@/lib/contactInbox";
+
 /** Public resume PDF (served from `/public/Resume/`). */
-export const RESUME_PDF_HREF = "/Resume/Micah_Yutao_Mei_Resume.pdf";
+export const RESUME_PDF_HREF = "/Resume/Micah2026Resume.pdf";
 
 /** Env overrides when set; defaults so footer icons work without Vercel `NEXT_PUBLIC_*` vars. */
 const DEFAULT_PUBLIC_SOCIAL = {
   linkedin: "https://www.linkedin.com/in/micahmei",
   github: "https://github.com/micah-mei",
-  email: "micahmei2005@gmail.com",
+  email: DEFAULT_CONTACT_EMAIL,
 } as const;
 
 export function getPublicSocialLinks(): {

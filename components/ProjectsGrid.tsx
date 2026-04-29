@@ -235,6 +235,63 @@ const projects: Project[] = [
     ),
   },
   {
+    cmd: "./system-controller.run",
+    name: "Hand Gesture System Controller",
+    subtitle: "Real-time hand pose → OS actions · Python",
+    role: "Personal project",
+    year: "2026",
+    summary:
+      "Webcam pipeline with MediaPipe landmarks, custom 2D gesture rules, and stable OS control (volume, media, track skip, app switcher)—OpenCV, pynput, PyAutoGUI, macOS camera and music-app handling.",
+    repoLink: "https://github.com/micah-mei/system-controller",
+    detail: (
+      <div className="space-y-4 text-sm leading-relaxed text-silver/65">
+        <div className="space-y-2">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-cyan/70">
+            What I built
+          </p>
+          <ul className="list-none space-y-3 p-0">
+            <li className="flex gap-2">
+              <span className="shrink-0 text-cyan/55" aria-hidden>
+                –
+              </span>
+              <span>
+                Built a real-time computer-vision pipeline that captures webcam video,
+                runs MediaPipe hand landmark detection, and maps stable hand poses to
+                OS actions (volume, play/pause, track skip, app switcher).
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="shrink-0 text-cyan/55" aria-hidden>
+                –
+              </span>
+              <span>
+                Implemented a custom gesture recognizer from 2D landmark geometry
+                (angles, distances, palm-relative thumb scoring) with hold and cooldown
+                logic so actions fire reliably without duplicate triggers.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="shrink-0 text-cyan/55" aria-hidden>
+                –
+              </span>
+              <span>
+                Integrated OpenCV for capture and preview, pynput for media and function
+                keys, and PyAutoGUI for platform-specific shortcuts; added macOS handling
+                (camera permissions, optional AppleScript for music apps).
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div className="space-y-2 border-l border-cyan/25 pl-3 font-mono text-[11px] leading-relaxed text-silver/55 md:text-xs">
+          <p>
+            <span className="text-cyan/85">stack:</span> Python, OpenCV, MediaPipe,
+            NumPy, pynput, PyAutoGUI
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
     cmd: "./shelfie.exe",
     name: "Shelfie",
     subtitle: "Smart Pantry Tracker · digital inventory & food-waste reduction",
